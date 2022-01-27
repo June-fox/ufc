@@ -35,7 +35,7 @@ void ConfirmFighters(void) {
 		// select the menu
 
 		// do menu
-	}while(n == 5)
+	} while (n == 5);
 }
 
 void ShowMenu(void) {
