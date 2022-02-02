@@ -22,8 +22,15 @@ typedef struct fighter {
 	double submission;
 	double stamina;
 }fighterT;
+
+void ConfirmFighters(void);
+int SelectMenu(void);
+void DoMenu(int menu);
+
 int main(void) {
 
+	// we're gonna manage 15 top fighters
+	fighterT warrior[15];
 	// confirm the warriorses .txt(append / edit / delete)
 	ConfirmFighters();
 
@@ -43,14 +50,15 @@ int main(void) {
 
 void ConfirmFighters(void) {
 
-	int n = 0;
+	int m = 0;
 	do {
 		// print the menu
 		ShowMenu();
 		// select the menu
-
+		m = SelectMenu();
 		// do menu
-	} while (n == 5);
+		DoMenu(m);
+	} while (m == 5);
 }
 
 void ShowMenu(void) {
@@ -59,6 +67,41 @@ void ShowMenu(void) {
 	printf("3. Edit the fighter.");
 	printf("4. Delete the fihter.");
 	printf("5. Let's go on the octagon.");
+}
+
+int SelectMenu(void) {
+	int temp_num = 0;
+	printf("press the number which service...");
+	scanf("%d", &temp_num);
+
+	return temp_num;
+}
+
+void DoMenu(int menu) {
+	switch (menu)
+	{
+	case 1:
+		// bring(open) the txt file
+		break;
+	case 2:
+		// append the fighter on chart
+
+		break;
+	case 3:
+		// edit
+
+		break;
+	case 4:
+		// delete
+
+		break;
+	case 5:
+		printf("bring us on the octagon!!\n");
+		break;
+	default:
+		printf("Please press the right number.\n");
+		break;
+	}
 }
 
 char* GetString(void) {
